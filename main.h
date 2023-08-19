@@ -14,10 +14,12 @@ int (*get_print_function(char s))(va_list);
 int dec_handler(va_list value);
 
 /**
- * struct handler - The handler structure
- *
+ * struct handler - the format handler structure
  * @format: The specified format
  * @handler: The associated format handler
+ *
+ * Description: a structure that stores a format specifier
+ * and its associated handler
 */
 typedef struct format
 {
