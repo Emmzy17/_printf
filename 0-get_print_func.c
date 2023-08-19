@@ -1,10 +1,11 @@
 #include "main.h"
+#include <stddef.h>
 /**
  * get_print_func - selects the function for a specifier
  * @s: specifier
  * Return: a pointer to function
  */
-int (*get_print_function(char s)(va_list))
+int (*get_print_function(char s))(va_list)
 {
 	int i;
 

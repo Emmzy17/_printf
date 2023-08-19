@@ -24,7 +24,7 @@ int print_string(va_list args)
 	int count;
 	int i;
 
-	str = va_args(args, const char *);
+	str = va_arg(args, const char *);
 	for (i = 0; str[i]; i++)
 	{
 		putchar(str[i]);
