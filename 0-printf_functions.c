@@ -24,9 +24,11 @@ int print_string(va_list args)
 	int count;
 	int i;
 
-	if (!str)
-		return (NULL);
 	str = va_arg(args, const char *);
+	if (!str)
+	{
+		str = "(null)";
+	}
 	for (i = 0; str[i]; i++)
 	{
 		putchar(str[i]);
