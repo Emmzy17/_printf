@@ -8,7 +8,7 @@
 int print_char(va_list args)
 {
 	char c;
-	
+
 	c = (char)va_arg(args, int);
 	putchar(c);
 	return (1);
@@ -24,6 +24,8 @@ int print_string(va_list args)
 	int count;
 	int i;
 
+	if (!str)
+		return (NULL);
 	str = va_arg(args, const char *);
 	for (i = 0; str[i]; i++)
 	{

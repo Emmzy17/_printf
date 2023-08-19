@@ -11,7 +11,7 @@ int (*get_print_function(char s))(va_list)
 
 	format_t formats[] = {
 	{'c', print_char},
- 	{'s', print_string},
+	{'s', print_string},
 	{'%', print_percent},
 	{0, NULL},
 	};
@@ -20,7 +20,7 @@ int (*get_print_function(char s))(va_list)
 	{
 		if (formats[i].specifier == s)
 		{
-			return formats[i].f;
+			return (formats[i].f);
 		}
 	}
 	return (NULL);

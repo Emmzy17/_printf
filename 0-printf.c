@@ -10,12 +10,19 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 	va_list args;
 	int (*func)(va_list);
+
 	va_start(args, format);
 
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
+		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+			{
+				putchar(format[i]);
+				count++;
+				continue;
+			}
 			func = get_print_function(format[i + 1]);
 			if (func)
 			{
