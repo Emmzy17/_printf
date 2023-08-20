@@ -13,7 +13,7 @@ int (*get_print_function(char s))(va_list)
 	{'c', print_char},
 	{'s', print_string},
 	{'%', print_percent},
-	{'d', print_decimal},
+	{'d', print_integer},
 	{'i', print_integer},
 	{'b', print_binary},
 	{0, NULL},
