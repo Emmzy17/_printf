@@ -49,3 +49,37 @@ int print_percent(va_list args)
 	_putchar('%');
 	return (1);
 }
+/**
+ * print_binary - unsigned int is converted to binary
+ * @args: arguement
+ * Return: Lenght of b
+ */
+int print_binary(va_list args)
+{
+	unsigned int num = va_args(args, unsigned int);
+	char buffer[33];
+	char *ptr = &buffer[32];
+	int count = 0;
+
+	if (num == 0)
+	{
+		putchar('0');
+		return (1);
+	}
+
+	while (num > 0)
+	{
+		ptr--;
+		*ptr = (num % 2) + '0';
+		num /= 2;
+	}
+
+	while (*ptr)
+	{
+		putchar(*ptr);
+		count++;
+		ptr++;
+	}
+
+	return (count);
+}
