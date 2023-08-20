@@ -1,0 +1,5 @@
+# Avoid push the test file
+
+main.c
+a.out
+main
