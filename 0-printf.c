@@ -59,5 +59,5 @@ int print_specifier(const char *format, va_list args)
 			count++;
 		}
 	}
-	return(count);
+	return (count);
 }

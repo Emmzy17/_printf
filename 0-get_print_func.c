@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * get_print_func - selects the function for a specifier
+ * get_print_function - selects the function for a specifier
  * @s: specifier
  * Return: a pointer to function
  */
