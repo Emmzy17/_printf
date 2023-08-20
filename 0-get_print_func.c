@@ -15,7 +15,7 @@ int (*get_print_function(char s))(va_list)
 	{'%', print_percent},
 	{'d', print_decimal},
 	{'i', print_integer},
-	{'b', print_binary}.
+	{'b', print_binary},
 	{0, NULL},
 	};
 

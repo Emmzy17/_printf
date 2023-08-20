@@ -56,7 +56,7 @@ int print_percent(va_list args)
  */
 int print_binary(va_list args)
 {
-	unsigned int num = va_args(args, unsigned int);
+	unsigned int num = va_arg(args, unsigned int);
 	char buffer[33];
 	char *ptr = &buffer[32];
 	int count = 0;
