@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
  * _printf - prints different data types just like printf
  * @format: the type of data type
@@ -10,6 +10,11 @@ int _printf(const char *format, ...)
 	int count = 0, i;
 	va_list args;
 	int (*func)(va_list);
+
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
 
 	va_start(args, format);
 
