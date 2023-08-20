@@ -15,7 +15,7 @@ int (*get_print_function(char s))(va_list)
 	{'%', print_percent},
 	{'d', print_decimal},
 	{'i', print_integer},
-	{NULL, NULL},
+	{0, NULL},
 	};
 
 	for (i = 0; formats[i].specifier; i++)
