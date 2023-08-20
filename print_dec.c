@@ -14,7 +14,7 @@ int print_decimal(va_list args)
 
 	if (num < 0)
 	{
-		_putchar('-');
+		putchar('-');
 		num *= -1;
 		i++;
 	}
@@ -29,7 +29,7 @@ int print_decimal(va_list args)
 	while (exp)
 	{
 		ncopy = num / exp;
-		_putchar('0' + ncopy);
+		putchar('0' + ncopy);
 		num -= (ncopy * exp);
 		exp /= 10;
 		i++;
@@ -51,7 +51,7 @@ int print_integer(va_list args)
 
 	if (num < 0)
 	{
-		_putchar('-');
+		putchar('-');
 		num *= -1;
 		i++;
 	}
@@ -66,7 +66,7 @@ int print_integer(va_list args)
 	while (exp)
 	{
 		ncopy = num / exp;
-		_putchar('0' + ncopy);
+		putchar('0' + ncopy);
 		num -= (ncopy * exp);
 		exp /= 10;
 		i++;

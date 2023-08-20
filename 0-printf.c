@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - prints different data types just like printf
  * @format: the type of data type
@@ -7,16 +6,30 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, i;
-	va_list args;
-	int (*func)(va_list);
+	int count = 0;
+
+	va_list(args);
+	va_start(args, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
+	count = print_specifier(format, args);
+	va_end(args);
+	return (count);
+}
 
-	va_start(args, format);
+/**
+ * print_specifier - print associated format
+ * @format: the formatted string
+ * @args: the argument received
+ * Return: number of character printed
+ */
+int print_specifier(const char *format, va_list args)
+{
+	int i, count = 0;
+	int (*func)(va_list);
 
 	for (i = 0; format[i]; i++)
 	{
@@ -24,7 +37,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0')
 			{
-				putchar(format[i]);
+				_putchar(format[i]);
 				count++;
 				continue;
 			}
@@ -36,17 +49,15 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				putchar(format[i]);
+				_putchar(format[i]);
 				count++;
 			}
 		}
 		else
 		{
-			putchar(format[i]);
+			_putchar(format[i]);
 			count++;
 		}
 	}
-
-	va_end(args);
-	return (count);
+	return(count);
 }

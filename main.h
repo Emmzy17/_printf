@@ -12,6 +12,7 @@ int print_percent(va_list args);
 int _printf(const char *format, ...);
 int (*get_print_function(char s))(va_list);
 int _putchar(char c);
+int print_specifier(const char *format, va_list args);
 int print_decimal(va_list args);
 int print_integer(va_list args);
 

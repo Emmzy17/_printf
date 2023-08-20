@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
  * print_char - prints a char
  * @args: arguements
@@ -10,7 +10,7 @@ int print_char(va_list args)
 	char c;
 
 	c = (char)va_arg(args, int);
-	putchar(c);
+	_putchar(c);
 	return (1);
 }
 /**
@@ -31,7 +31,7 @@ int print_string(va_list args)
 	}
 	for (i = 0; str[i]; i++)
 	{
-		putchar(str[i]);
+		_putchar(str[i]);
 		count++;
 	}
 	return (count);
@@ -44,6 +44,6 @@ int print_string(va_list args)
 int print_percent(va_list args)
 {
 	(void)args;
-	putchar('%');
+	_putchar('%');
 	return (1);
 }
