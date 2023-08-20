@@ -31,6 +31,10 @@ int print_specifier(const char *format, va_list args)
 	int i, count = 0;
 	int (*func)(va_list);
 
+	if (!format)
+	{
+		return (-1);
+	}
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
