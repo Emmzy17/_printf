@@ -63,7 +63,7 @@ int print_binary(va_list args)
 
 	if (num == 0)
 	{
-		putchar('0');
+		_putchar('0');
 		return (1);
 	}
 
@@ -76,10 +76,13 @@ int print_binary(va_list args)
 
 	while (*ptr)
 	{
-		putchar(*ptr);
+		_putchar(*ptr);
 		count++;
 		ptr++;
 	}
+
+	buffer[33] = '\0';
+	_putchar(buffer[33]);
 
 	return (count);
 }
