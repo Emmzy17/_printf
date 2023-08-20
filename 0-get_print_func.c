@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stddef.h>
 
 /**
  * get_print_function - selects the function for a specifier
@@ -16,7 +15,7 @@ int (*get_print_function(char s))(va_list)
 	{'%', print_percent},
 	{'d', print_decimal},
 	{'i', print_integer},
-	{0, NULL},
+	{NULL, NULL},
 	};
 
 	for (i = 0; formats[i].specifier; i++)
