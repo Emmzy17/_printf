@@ -58,32 +58,25 @@ int print_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	char buffer[33];
-	char *ptr = &buffer[32];
-	int count = 0;
+	int count = 0, index = 0;
 	
-	if (!num)
-	{
-		num = 0;
-		return (1);
-	}
+
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
 
-	while (num > 0)
+	while (num)
 	{
-		ptr--;
-		*ptr = (num % 2) + '0';
-		num /= 2;
+		buffer[index++] = (num & 1) + '0';
+		num >>= 1;
 	}
 
-	while (*ptr)
+	while (index--)
 	{
-		_putchar(*ptr);
+		_putchar(buffer[index]);
 		count++;
-		ptr++;
 	}
 
 	buffer[33] = '\0';
