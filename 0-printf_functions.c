@@ -60,7 +60,12 @@ int print_binary(va_list args)
 	char buffer[33];
 	char *ptr = &buffer[32];
 	int count = 0;
-
+	
+	if (!num)
+	{
+		num = 0;
+		return (1);
+	}
 	if (num == 0)
 	{
 		_putchar('0');
