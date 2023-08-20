@@ -22,7 +22,7 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	const char *str;
-	int count;
+	int count = 0;
 	int i;
 
 	str = va_arg(args, const char *);
