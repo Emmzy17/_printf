@@ -13,7 +13,6 @@ int print_char(va_list args)
 	_putchar(c);
 	return (1);
 }
-
 /**
  * print_string - prints a string
  * @args: argument
@@ -37,7 +36,6 @@ int print_string(va_list args)
 	}
 	return (count);
 }
-
 /**
  * print_percent - prints '%' specifier
  * @args: arguements
