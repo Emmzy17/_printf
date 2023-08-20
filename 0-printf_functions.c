@@ -57,8 +57,8 @@ int print_percent(va_list args)
 int print_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	char buffer[32];
-	int count = 0, index = 0;
+	unsigned int mask = 1 << (sizeof(num) * 8 - 1);
+	int count = 0, started = 0;
 	
 
 	if (num == 0)
@@ -67,20 +67,22 @@ int print_binary(va_list args)
 		return (1);
 	}
 
-	while (num)
+	while (mask)
 	{
-		buffer[index++] = (num & 1) + '0';
-		num >>= 1;
-	}
+		if (num & mask )
+		{
+			_putchar('1');
+			count++;
+			started = 1;
+		}
+		else if(started)
+		{
+			_putchar('0');
+			count++;
+		}
 
-	while (index--)
-	{
-		_putchar(buffer[index]);
-		count++;
+		mask >>= 1;
 	}
-
-	buffer[32] = '\0';
-	_putchar(buffer[33]);
 
 	return (count);
 }
