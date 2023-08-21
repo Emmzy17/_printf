@@ -16,6 +16,7 @@ int (*get_print_function(char s))(va_list)
 	{'d', print_integer},
 	{'i', print_integer},
 	{'b', print_binary},
+	{'p', print_pointer},
 	{0, NULL},
 	};
 

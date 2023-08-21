@@ -86,3 +86,48 @@ int print_binary(va_list args)
 
 	return (count);
 }
+int print_pointer(va_list args)
+{
+	void *ptr = va_arg(args, void *);
+	unsigned long int addr = (unsigned long int)ptr;
+	int count = 0;
+
+	if (ptr == NULL)
+	{
+		char *nil_str = "(nil)";
+		while (*nil_str)
+		{
+			_putchar(*nil_str);
+			nil_str++;
+			count++;
+		}
+		return count;
+	}
+	else
+	{
+		_putchar('0');
+		_putchar('x');
+		count += 2;
+		count += print_hex(addr);
+		return (count);
+	}
+}
+
+int print_hex(unsigned long int n)
+{
+	int count = 0;
+	if (n >= 16)
+	{
+		count += print_hex(n / 16);
+	}
+	if (n % 16 < 10)
+	{
+		_putchar((n % 16) + '0');
+	}
+	else
+	{
+		_putchar((n % 16) - 10 + 'a');
+	}
+	
+	return (count + 1);
+}	
