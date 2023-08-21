@@ -5,9 +5,8 @@
  * @c: the output character
  * Return: the number of byted written (success) -1 (failure)
 */
-
 static char buffer[1024];
-static int buf_index = 0
+static int buf_index = 0;
 int _putchar(char c)
 {
 	buffer[buf_index] = c;

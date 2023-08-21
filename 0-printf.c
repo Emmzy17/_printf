@@ -1,4 +1,6 @@
 #include "main.h"
+static char buffer[1024];
+static int buf_index = 0;
 /**
  * _printf - prints different data types just like printf
  * @format: the type of data type
@@ -19,7 +21,7 @@ int _printf(const char *format, ...)
 	if (buf_index > 0)
 	{
 		write(1, buffer, buf_index);
-		but_index = 0;
+		buf_index = 0;
 	}
 	va_end(args);
 	return (count);
