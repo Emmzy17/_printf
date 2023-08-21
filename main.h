@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+extern char buffer[1024];
+extern int buf_index;
 
 int print_char(va_list args);
 int print_string(va_list args);
