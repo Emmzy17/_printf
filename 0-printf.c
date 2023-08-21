@@ -16,6 +16,11 @@ int _printf(const char *format, ...)
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
 	count = print_specifier(format, args);
+	if (buf_index > 0)
+	{
+		write(1, buffer, buf_index);
+		but_index = 0;
+	}
 	va_end(args);
 	return (count);
 }
