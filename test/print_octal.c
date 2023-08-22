@@ -2,7 +2,7 @@
 
 /**
  * print_octal - Prints the numeric representation of a number in octal base
- * @list: List of all the arguments passed to the program
+ * @args: List of all the arguments passed to the program
  * Return: Number of symbols printed to stdout
  */
 
@@ -10,33 +10,37 @@ int print_octal(va_list args)
 {
 	unsigned int num;
 	int len;
-	char *result;
-	char *str;
+	char *octal_rep;
+	char *rev_str;
 
-	num = va_arg(list, unsigned int);
+	printf("p");
+
+	num = va_arg(args, unsigned int);
 
 	if (num == 0)
 		return (_putchar('0'));
 	if (num < 1)
 		return (-1);
-	len = char_len(num, 8);
+	len = base_len(num, 8);
 
-	result = malloc(sizeof(char) * len + 1);
-	if (result == NULL)
+	octal_rep = malloc(sizeof(char) * len + 1);
+	printf("m");
+	if (octal_rep == NULL)
 		return (-1);
 	for (len = 0; num > 0; len++)
 	{
-		result[len] = (num % 8) + 48;
+		octal_rep[len] = (num % 8) + 48;
 		num = num / 8;
 
 	}
-	result[len] = '\0';
-	str = rev_string(result);
-	if (str == NULL)
+	octal_rep[len] = '\0';
+	rev_str = rev_string(octal_rep);
+	if (rev_str == NULL)
 		return (-1);
 
-	write_char(str);
-	free(result);
-	free(str);
+	write_base(rev_str);
+	free(octal_rep);
+	free(rev_str);
 	return (len);
 }
+
