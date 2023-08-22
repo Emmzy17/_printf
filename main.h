@@ -24,6 +24,7 @@ int print_unsigned_integer(va_list args);
 int print_octal(va_list args);
 int print_hex_lower(va_list args);
 int print_hex_upper(va_list args);
+int print_unsigned_number(unsigned int n);
 char *convert(unsigned long int num, int base, int lowercase);
 int hex_check(int num, char x);
 int _puts(char *str);

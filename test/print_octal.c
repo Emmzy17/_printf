@@ -13,8 +13,6 @@ int print_octal(va_list args)
 	char *octal_rep;
 	char *rev_str;
 
-	printf("p");
-
 	num = va_arg(args, unsigned int);
 
 	if (num == 0)
@@ -24,14 +22,12 @@ int print_octal(va_list args)
 	len = base_len(num, 8);
 
 	octal_rep = malloc(sizeof(char) * len + 1);
-	printf("m");
 	if (octal_rep == NULL)
 		return (-1);
 	for (len = 0; num > 0; len++)
 	{
 		octal_rep[len] = (num % 8) + 48;
 		num = num / 8;
-
 	}
 	octal_rep[len] = '\0';
 	rev_str = rev_string(octal_rep);
@@ -43,4 +39,3 @@ int print_octal(va_list args)
 	free(rev_str);
 	return (len);
 }
-
