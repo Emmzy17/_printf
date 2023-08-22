@@ -26,8 +26,11 @@ int number_len(int number, int base);
 =======
 int print_decimal(va_list);
 int print_integer(va_list);
+<<<<<<< HEAD
 int print_number(va_list args);
 >>>>>>> parent of 5521590... new changes
+=======
+>>>>>>> parent of 3e5ca58... new chagnes
 int print_binary(va_list args);
 int print_pointer(va_list args);
 int print_hex(unsigned long int n);
