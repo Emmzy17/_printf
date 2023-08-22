@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_hex - Prints a representation of a decimal number on base16 lowercase
- * @list: List of the arguments passed to the function
+ * print_hex_lower - Prints a representation of a decimal number on base16 lowercase
+ * @args: List of the arguments passed to the function
  * Return: Number of characters printed
  */
 
-int print_hex(va_list args)
+int print_hex_lower(va_list args)
 {
 	unsigned int num;
 	int len;
@@ -49,12 +49,12 @@ int print_hex(va_list args)
 #include "main.h"
 
 /**
- * print_HEX - Prints a representation of a decimal number on base16 Uppercase
- * @list: List of the arguments passed to the function
+ * print_hex_upper - Prints a representation of a decimal number on base16 Uppercase
+ * @args: List of the arguments passed to the function
  * Return: Number of characters printed
  */
 
-int print_HEX(va_list list)
+int print_hex_upper(va_list args)
 {
 	unsigned int num;
 	int len;
@@ -62,7 +62,7 @@ int print_HEX(va_list list)
 	char *hex_rep;
 	char *rev_hex;
 
-	num = va_arg(list, unsigned int);
+	num = va_arg(args, unsigned int);
 
 	if (num == 0)
 		return (_putchar('0'));

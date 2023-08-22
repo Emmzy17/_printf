@@ -1,6 +1,24 @@
 #include "main.h"
 
 /**
+ * _memcpy - copy memory area
+ * @dest: Destination for copying
+ * @src: Source to copy from
+ * @n: The number of bytes to copy
+ * Return: The _memcpy() function returns a pointer to dest.
+ */
+
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+        unsigned int i;
+
+        for (i = 0; i < n; i++)
+                dest[i] = src[i];
+        dest[i] = '\0';
+        return (dest);
+}
+
+/**
  * base_len - Calculates the length for an octal number
  * @num: The number for which the length is being calculated
  * @base: Base to be calculated by
@@ -40,7 +58,7 @@ char *rev_string(char *s)
 	if (dest == NULL)
 		return (NULL);
 
-	_memcpy(dest, s, len);
+	dest = _memcpy(dest, s, len);
 	for (head = 0; head < len; head++, len--)
 	{
 		tmp = dest[len - 1];
@@ -64,26 +82,6 @@ void write_base(char *str)
 		_putchar(str[i]);
 }
 
-
-/**
- * _memcpy - copy memory area
- * @dest: Destination for copying
- * @src: Source to copy from
- * @n: The number of bytes to copy
- * Return: The _memcpy() function returns a pointer to dest.
- */
-
-char *_memcpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int i;
-
-	for (i = 0; i < n; i++)
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
-}
-
-
 /**
  * hex_check - Checks which hex function is calling it
  * @num: Number to convert into letter
@@ -102,4 +100,18 @@ int hex_check(int num, char x)
 	else
 		return (Hex[num]);
 	return (0);
+}
+
+/**
+ * _puts - prints a string to stdout
+ * @str: pointer to the string to print
+ * Return: number of chars written
+ */
+int _puts(char *str)
+{
+	register short i;
+
+	for (i = 0; str[i]; i++)
+		_putchar(str[i]);
+	return (i);
 }

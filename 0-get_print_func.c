@@ -7,7 +7,7 @@
  */
 int (*get_print_function(char *s))(va_list)
 {
-	int i, j;
+	int i;
 
 	format_t formats[] = {
 	{"c", print_char},
@@ -18,20 +18,10 @@ int (*get_print_function(char *s))(va_list)
 	{"b", print_binary},
 	{"p", print_pointer},
 	{"u", print_unsigned_integer},
-	{"ld", print_long_decimal},
-	{"li" print_long_integer},
-	{"lu", print_long_unsigned},
-	{"lo", print_long_octal},
-	{"lx", print_long_hex},
-	{"lX", print_long_HEX},
-	{"hd", print_short_decimal},
-	{"hi", print_short_integer},
-	{"hu", print_short_unsigned},
-	{"ho", print_short_octal},
-	{"hx", print_short_hex},
-	{"hX", print_short_HEX},
+	{"o", print_octal},
+	{"x", print_hex_lower},
+	{"X", print_hex_upper},
 	{NULL, NULL},
-
 	};
 
 

@@ -6,10 +6,10 @@
  * Return: the length of the string.
  */
 
-int print_String(va_list l)
+int print_String(va_list args)
 {
 	register short len = 0;
-	char *res, *s = va_arg(l, char *);
+	char *res, *s = va_arg(args, char *);
 	int count;
 
 	if (!s)

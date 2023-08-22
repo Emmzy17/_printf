@@ -53,7 +53,7 @@ int print_specifier(const char *format, va_list args)
 				specifier[0] = format[i + 1];
 				specifier[1] = format[i + 2];
 				specifier[2] = '\0';
-				i +=2;
+				i += 2;
 			}
 			if (format[i + 1] == '\0')
 			{
@@ -63,7 +63,7 @@ int print_specifier(const char *format, va_list args)
 			}
 			else
 			{
-				specifier[0] = formaat[i + 1];
+				specifier[0] = format[i + 1];
 				specifier[1] = '\0';
 				i++;
 			}
@@ -71,7 +71,6 @@ int print_specifier(const char *format, va_list args)
 			if (func)
 			{
 				count += func(args);
-				i++;
 			}
 			else
 			{
