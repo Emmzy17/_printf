@@ -196,7 +196,7 @@ int print_short_decimal(va_list args)
 
 	return (index);
 }
-int print_long_int(va_list args)
+int print_long_unsigned(va_list args)
 {
 	unsigned long int num  = va_arg(args, unsigned long int);
 	char num_str[25];
