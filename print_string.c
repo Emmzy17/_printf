@@ -1,70 +1,74 @@
 #include "main.h"
-
 /**
- * print_String - print exclusuives string.
+ * printf_exclusive_string - print exclusuive string
  * @val: argumen t.
  * Return: the length of the string.
  */
 
-int print_String(va_list l)
+int printf_exclusive_string(va_list args)
 {
-	register short len = 0;
-	char *res, *s = va_arg(l, char *);
-	int count;
+	char *s;
+	int i, len = 0;
+	int cast;
 
-	if (!s)
-		return (_puts(NULL_STRING));
-	for (; *s; s++)
+	s = va_arg(args, char *);
+	if (s == NULL)
+		s = "(null)";
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (is_non_alphanumeric(*s))
+		if (s[i] < 32 || s[i] >= 127)
 		{
-			count += _puts("\\x");
-			res = convert(*s, 16, 0);
-			if (!res[1])
-				len += _putchar('0');
-			len += _puts(res);
+			_putchar('\\');
+			_putchar('x');
+			len = len + 2;
+			cast = s[i];
+			if (cast < 16)
+			{
+				_putchar('0');
+				len++;
+			}
+			len = len + printf_HEX_aux(cast);
 		}
 		else
-			len += _putchar(*s);
+		{
+			_putchar(s[i]);
+			len++;
+		}
 	}
 	return (len);
 }
 
 /**
- * is_non_alphanumeric - determines if char is a non-
- * alphanumeric char on ASCII table
- * @c: input char
- * Return: true or false
+ * printf_HEX_aux - prints an hexgecimal number.
+ * @num: number to print.
+ * Return: counter.
  */
-
-int is_non_alphanumeric(char c) 
+int printf_HEX_aux(unsigned int num)
 {
-	return ((c > 0 && c < 32) || c >= 127);
-}
+	int i;
+	int *array;
+	int counter = 0;
+	unsigned int temp = num;
 
-/**
- * convert - converts number and base into string
- * @num: input number
- * @base: input base
- * @lowercase: flag if hexa values need to be lowercase
- * Return: result string
- */
+	while (num / 16 != 0)
+	{
+		num /= 16;
+		counter++;
+	}
+	counter++;
+	array = malloc(counter * sizeof(int));
 
-char *convert(unsigned long int num, int base, int lowercase)
-{
-	static char *rep;
-	static char buffer[50];
-	char *ptr;
-
-	rep = (lowercase)
-		? "0123456789abcdef"
-		: "0123456789ABCDEF";
-	ptr = &buffer[49];
-	*ptr = NUL;
-	do {
-		*--ptr = rep[num % base];
-		num /= base;
-	} while (num);
-
-	return (ptr);
+	for (i = 0; i < counter; i++)
+	{
+		array[i] = temp % 16;
+		temp /= 16;
+	}
+	for (i = counter - 1; i >= 0; i--)
+	{
+		if (array[i] > 9)
+			array[i] = array[i] + 7;
+		_putchar(array[i] + '0');
+	}
+	free(array);
+	return (counter);
 }
