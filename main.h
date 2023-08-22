@@ -39,7 +39,20 @@ int print_binary(va_list args);
 int print_pointer(va_list args);
 int print_hex(unsigned long int n);
 int _strcmp(char *s1, char *s2);
+<<<<<<< HEAD
+int print_long_decimal(va_list args);
+int print_short_decimal(va_list args);
+int print_long_unsigned(va_list args);
+int print_short_unsigned(va_list args);
+int print_long_octal(va_list args);
+int print_short_octal(va_list args);
+int print_long_hex_lower(va_list args);
+int print_short_hex_lower(va_list args);
+int print_long_hex_upper(va_list args);
+int print_short_hex_upper(va_list args);
+=======
 int print_rot13(va_list args);
+>>>>>>> b88c33858554eba17c98f481e3c2a120950b61af
 
 /**
  * struct format - the format handler structure

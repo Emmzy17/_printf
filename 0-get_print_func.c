@@ -19,10 +19,25 @@ int (*get_print_function(char *s))(va_list)
 	{"p", print_pointer},
 	{"u", print_unsigned_integer},
 	{"o", print_octal},
+<<<<<<< HEAD
+	{"ld", print_long_decimal},
+	{"li", print_long_decimal},
+	{"lu", print_long_unsigned},
+	{"lo", print_long_octal},
+	{"lx", print_long_hex_lower},
+	{"lX", print_long_hex_upper},
+	{"hd", print_short_decimal},
+	{"hi", print_short_decimal},
+	{"hu", print_short_unsigned},
+	{"ho", print_short_octal},
+	{"hx", print_short_hex_lower},
+	{"hX", print_short_hex_upper},
+=======
 	{"x", print_hex_lower},
 	{"X", print_hex_upper},
 	{"R", print_rot13},
 	{"S", print_String},
+>>>>>>> b88c33858554eba17c98f481e3c2a120950b61af
 	{NULL, NULL},
 	};
 
