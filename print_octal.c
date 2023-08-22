@@ -2,24 +2,24 @@
 
 /**
  * print_octal - Prints the numeric representation of a number in octal base
- * @args: List of all the arguments passed to the program
+ * @list: List of all the arguments passed to the program
  * Return: Number of symbols printed to stdout
  */
 
-int print_octal(va_list args)
+int print_octal(va_list list)
 {
 	unsigned int num;
 	int len;
 	char *octal_rep;
 	char *rev_str;
 
-	num = va_arg(args, unsigned int);
+	num = va_arg(list, unsigned int);
 
 	if (num == 0)
 		return (_putchar('0'));
 	if (num < 1)
 		return (-1);
-	len = number_len(num, 8);
+	len = base_len(num, 8);
 
 	octal_rep = malloc(sizeof(char) * len + 1);
 	if (octal_rep == NULL)
@@ -41,33 +41,3 @@ int print_octal(va_list args)
 	return (len);
 }
 
-/**
- * rev_string - reverses a string in place
- *
- * @s: string to reverse
- * Return: A pointer to a character
- */
-
-char *rev_string(char *s)
-{
-	int len;
-	int head;
-	char tmp;
-	char *dest;
-
-	for (len = 0; s[len] != '\0'; len++)
-	{}
-
-	dest = malloc(sizeof(char) * len + 1);
-	if (dest == NULL)
-		return (NULL);
-
-	_memcpy(dest, s, len);
-	for (head = 0; head < len; head++, len--)
-	{
-		tmp = dest[len - 1];
-		dest[len - 1] = dest[head];
-		dest[head] = tmp;
-	}
-	return (dest);
-}
