@@ -33,7 +33,7 @@ char *rev_string(char *s);
 void write_base(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 int hex_check(int num, char x);
-int is_non_alpha_numeric(char c);
+int is_non_alphanumeric(char c);
 int print_String(va_list args);
 int print_binary(va_list args);
 int print_pointer(va_list args);
