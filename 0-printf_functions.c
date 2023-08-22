@@ -347,13 +347,87 @@ int print_long_hex_lower(va_list args)
 }
 int print_short_hex_lower(va_list args)
 {
-	return (0);
+	unsigned short int num = (unsigned short int)va_arg(args, int);
+	char num_str[10];
+	int index = 0;
+	int len = 0;
+	int i;
+	char hex_chars[] = "0123456789abcdef";
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	while (num > 0)
+	{
+		num_str[index++] = hex_chars[num % 16];
+		num /= 16;
+	}
+	num_str[index] = '\0';
+
+	for (i = index - 1; 1 >= 0; i--)
+	{
+		_putchar(num_str[i]);
+		len++;
+	}
+
+	return (len);
 }
 int print_long_hex_upper(va_list args)
 {
-	return (0);
+	unsigned long int num = (unsigned long int)va_arg(args, int);
+	char hex_digits[] = "0123456789ABCDEF";
+	char buffer[17];
+	int i = 0;
+	int count = 0;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	while (num)
+	{
+		buffer[i++] = hex_digits[num % 16];
+		num /= 16;
+	}
+
+	while (i)
+	{
+		_putchar(buffer[--i]);
+		count++;
+	}
+
+	return (count);
 }
 int print_short_hex_upper(va_list args)
-{
-	return (0);
+{	
+	unsigned short int num = (unsigned short int)va_arg(args, int);
+	char hex_digits[] = "0123456789ABCDEF";
+	char buffer[5];
+	int i = 0;
+	int count = 0;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	while (num)
+	{
+		buffer[i++] = hex_digits[num % 16];
+		num /=16;
+	}
+
+	while (i)
+	{
+		_putchar(buffer[--i]);
+		count++;
+	}
+
+	return (count);
 }

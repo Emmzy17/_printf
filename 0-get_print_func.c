@@ -48,4 +48,3 @@ int (*get_print_function(char *s))(va_list)
 
 	return (NULL);
 }
-
