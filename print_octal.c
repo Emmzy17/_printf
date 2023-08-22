@@ -35,7 +35,7 @@ int print_octal(va_list args)
 	if (str == NULL)
 		return (-1);
 
-	wrte_char(str);
+	write_char(str);
 	free(result);
 	free(str);
 	return (len);
