@@ -2,21 +2,21 @@
 
 /**
  * print_String - print exclusuives string.
- * @args: argumen t.
+ * @val: argumen t.
  * Return: the length of the string.
  */
 
-int print_String(va_list args)
+int print_String(va_list l)
 {
 	register short len = 0;
-	char *res, *s = va_arg(args, char *);
+	char *res, *s = va_arg(l, char *);
 	int count;
 
 	if (!s)
 		return (_puts(NULL_STRING));
 	for (; *s; s++)
 	{
-		if (is_non_alpha_numeric(*s))
+		if (is_non_alphanumeric(*s))
 		{
 			count += _puts("\\x");
 			res = convert(*s, 16, 0);
@@ -31,13 +31,13 @@ int print_String(va_list args)
 }
 
 /**
- * is_non_alpha_numeric - determines if char is a non-
+ * is_non_alphanumeric - determines if char is a non-
  * alphanumeric char on ASCII table
  * @c: input char
  * Return: true or false
  */
 
-int is_non_alpha_numeric(char c)
+int is_non_alphanumeric(char c) 
 {
 	return ((c > 0 && c < 32) || c >= 127);
 }

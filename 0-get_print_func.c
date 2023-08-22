@@ -39,7 +39,6 @@ int (*get_print_function(char *s))(va_list)
 	{NULL, NULL},
 	};
 
-
 	for (i = 0; formats[i].specifier; i++)
 	{
 		if (_strcmp(formats[i].specifier, s) == 0)
