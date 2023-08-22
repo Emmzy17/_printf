@@ -1,5 +1,8 @@
 #include "main.h"
 
+int buf_index = 0;
+char buffer[1024];
+
 /**
  * _printf - prints different data types just like printf
  * @format: the type of data type
@@ -8,8 +11,6 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	int buf_index = 0;
-	char buffer[1024];
 
 	va_list(args);
 	va_start(args, format);
