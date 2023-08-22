@@ -37,7 +37,7 @@ int print_String(va_list args)
  * Return: true or false
  */
 
-int is_non_alpha_numeric(char c) 
+int is_non_alpha_numeric(char c)
 {
 	return ((c > 0 && c < 32) || c >= 127);
 }
