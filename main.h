@@ -49,8 +49,9 @@ int print_long_hex_lower(va_list args);
 int print_short_hex_lower(va_list args);
 int print_long_hex_upper(va_list args);
 int print_short_hex_upper(va_list args);
+int print_reverse(va_list args);
 int print_rot13(va_list args);
-
+int rev_string(char *s);
 
 /**
  * struct format - the format handler structure
