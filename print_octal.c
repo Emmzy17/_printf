@@ -1,16 +1,17 @@
 #include "main.h"
 
 /**
- * print_octal - Prints the octal representation of a number
- * @args: arguments passed
- * Return: total number of character printed
+ * print_octal - Prints the numeric representation of a number in octal base
+ * @list: List of all the arguments passed to the program
+ * Return: Number of symbols printed to stdout
  */
 
-int print_octal(va_list args)
+int print_octal(va_list list)
 {
 	unsigned int num;
-	int len, lcopy, i;
-	char *result;
+	int len;
+	char *octal_rep;
+	char *rev_str;
 
 	num = va_arg(list, unsigned int);
 
@@ -19,22 +20,54 @@ int print_octal(va_list args)
 	if (num < 1)
 		return (-1);
 	len = number_len(num, 8);
-	lcopy = len;
 
-	result = malloc(sizeof(char) * (len + 1));
-	if (result == NULL)
+	octal_rep = malloc(sizeof(char) * len + 1);
+	if (octal_rep == NULL)
 		return (-1);
-	while (number)
+	for (len = 0; num > 0; len++)
 	{
-		result[len - 1] = (number % 8) + 48;
-		number /= 8;
-		len--;
+		octal_rep[len] = (num % 8) + 48;
+		num = num / 8;
+
 	}
-	result[lcopy] = '\0';
-	for (i = 0; result[i] != '\0'; i++)
-	{
-		_putchar(result[i]);
-	}
-	free(result);
+	octal_rep[len] = '\0';
+	rev_str = rev_string(octal_rep);
+	if (rev_str == NULL)
+		return (-1);
+
+	write_base(rev_str);
+	free(octal_rep);
+	free(rev_str);
 	return (len);
+}
+
+/**
+ * rev_string - reverses a string in place
+ *
+ * @s: string to reverse
+ * Return: A pointer to a character
+ */
+
+char *rev_string(char *s)
+{
+	int len;
+	int head;
+	char tmp;
+	char *dest;
+
+	for (len = 0; s[len] != '\0'; len++)
+	{}
+
+	dest = malloc(sizeof(char) * len + 1);
+	if (dest == NULL)
+		return (NULL);
+
+	_memcpy(dest, s, len);
+	for (head = 0; head < len; head++, len--)
+	{
+		tmp = dest[len - 1];
+		dest[len - 1] = dest[head];
+		dest[head] = tmp;
+	}
+	return (dest);
 }
