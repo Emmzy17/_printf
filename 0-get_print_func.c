@@ -30,7 +30,7 @@ int (*get_print_function(char *s))(va_list)
 	{"ho", print_short_octal},
 	{"hx", print_short_hex},
 	{"hX", print_short_HEX},
-	{0, NULL},
+	{NULL, NULL},
 
 	};
 
