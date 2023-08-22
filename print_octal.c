@@ -2,18 +2,18 @@
 
 /**
  * print_octal - Prints the numeric representation of a number in octal base
- * @list: List of all the arguments passed to the program
+ * @args: List of all the arguments passed to the program
  * Return: Number of symbols printed to stdout
  */
 
-int print_octal(va_list list)
+int print_octal(va_list args)
 {
 	unsigned int num;
 	int len;
 	char *octal_rep;
 	char *rev_str;
 
-	num = va_arg(list, unsigned int);
+	num = va_arg(args, unsigned int);
 
 	if (num == 0)
 		return (_putchar('0'));
