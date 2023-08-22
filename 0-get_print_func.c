@@ -22,6 +22,7 @@ int (*get_print_function(char *s))(va_list)
 	{"x", print_hex_lower},
 	{"X", print_hex_upper},
 	{"R", print_rot13},
+	{"S", print_String},
 	{NULL, NULL},
 	};
 
