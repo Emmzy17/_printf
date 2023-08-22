@@ -7,7 +7,7 @@
  * Return: An integer representing the length of a number
  */
 
-unsigned int base_len(unsigned int num, int base)
+unsigned int char_len(unsigned int num, int base)
 {
 	unsigned int i;
 
@@ -56,7 +56,7 @@ char *rev_string(char *s)
  * @str: String to parse
  */
 
-void write_base(char *str)
+void write_char(char *str)
 {
 	int i;
 
