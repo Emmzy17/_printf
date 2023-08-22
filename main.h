@@ -16,11 +16,18 @@ int _printf(const char *format, ...);
 int (*get_print_function(char s))(va_list);
 int _putchar(char c);
 int print_specifier(const char *format, va_list args);
-int print_decimal(va_list);
-int print_integer(va_list);
+int print_integer(va_list args);
+int print_unsigned_integer(va_list args);
+int print_octal(va_list args);
+unsigned int char_len(unsigned int num, int base);
+char *rev_string(char *s);
+void write_char(char *str);
+char *_memcpy(char *dest, char *src, unsigned int n);
+int hex_check(int num, char x);
 int print_binary(va_list args);
 int print_pointer(va_list args);
 int print_hex(unsigned long int n);
+
 /**
  * struct format - the format handler structure
  * @specifier: The specified format

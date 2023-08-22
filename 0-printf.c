@@ -1,6 +1,6 @@
 #include "main.h"
-char buffer[1024];
 int buf_index = 0;
+char buffer[1024];
 
 /**
  * _printf - prints different data types just like printf

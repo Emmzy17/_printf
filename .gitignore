@@ -1,4 +1,4 @@
-# Avoid push the test file
+# Avoid pushing the test files
 1-main.c
 main.c
 a.out
