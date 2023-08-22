@@ -18,6 +18,7 @@ int _putchar(char c);
 int print_specifier(const char *format, va_list args);
 int print_integer(va_list args);
 int print_unsigned_integer(va_list args);
+int print_octal(va_list args);
 int print_binary(va_list args);
 int print_pointer(va_list args);
 int print_hex(unsigned long int n);
