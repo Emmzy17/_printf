@@ -13,7 +13,7 @@ int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
 int _printf(const char *format, ...);
-int (*get_print_function(char s))(va_list);
+int (*get_print_function(char *s))(va_list);
 int _putchar(char c);
 int print_specifier(const char *format, va_list args);
 int print_integer(va_list args);
@@ -28,6 +28,16 @@ int print_binary(va_list args);
 int print_pointer(va_list args);
 int print_hex(unsigned long int n);
 int _strcmp(char *s1, char *s2);
+int print_long_decimal(va_list args);
+int print_short_decimal(va_list args);
+int print_long_unsigned(va_list args);
+int print_short_unsigned(va_list args);
+int print_long_octal(va_list args);
+int print_short_octal(va_list args);
+int print_long_hex_lower(va_list args);
+int print_short_hex_lower(va_list args);
+int print_long_hex_upper(va_list args);
+int print_short_hex_upper(va_list args);
 
 /**
  * struct format - the format handler structure
