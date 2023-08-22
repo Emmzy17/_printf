@@ -15,11 +15,8 @@ int (*get_print_function(char s))(va_list)
 	{'%', print_percent},
 	{'d', print_integer},
 	{'i', print_integer},
-	{'u', print_unsigned_integer},
 	{'b', print_binary},
 	{'p', print_pointer},
-	{'x', print_hex_lower},
-	{'X', print_hex_upper},
 	{0, NULL},
 	};
 
