@@ -27,6 +27,7 @@ int hex_check(int num, char x);
 int print_binary(va_list args);
 int print_pointer(va_list args);
 int print_hex(unsigned long int n);
+int _strcmp(char *s1, char *s2);
 
 /**
  * struct format - the format handler structure
@@ -38,15 +39,9 @@ int print_hex(unsigned long int n);
 */
 typedef struct format
 {
-	char specifier;
+	char *specifier;
 	int (*f)(va_list);
 } format_t;
 
-typedef struct length_modifier 
-{
-	char length_modifier;
-	char specifier;
-	int (*func)(va_list);
-} length_modifier_t;
 
 #endif

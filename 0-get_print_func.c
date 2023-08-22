@@ -10,40 +10,40 @@ int (*get_print_function(char *s))(va_list)
 	int i, j;
 
 	format_t formats[] = {
-	{'c', print_char},
-	{'s', print_string},
-	{'%', print_percent},
-	{'d', print_integer},
-	{'i', print_integer},
-	{'b', print_binary},
-	{'p', print_pointer},
-	{'u', print_unsigned_integer},
-	{'o', print_octal},
-	{0, NULL},
+	{"c", print_char},
+	{"s", print_string},
+	{"%", print_percent},
+	{"d", print_integer},
+	{"i", print_integer},
+	{"b", print_binary},
+	{"p", print_pointer},
+	{"u", print_unsigned_integer},
+	{"o", print_octal},
+	{"ld", print_long_decimal},
+	{"li" print_long_integer},
+	{"lu", print_long_unsigned},
+	{"lo", print_long_octal},
+	{"lx", print_long_hex},
+	{"lX", print_long_HEX},
+	{"hd", print_short_decimal},
+	{"hi", print_short_integer},
+	{"hu", print_short_unsigned},
+	{"ho", print_short_octal},
+	{"hx", print_short_hex},
+	{"hX", print_short_HEX},
+	{NULL, NULL},
+
 	};
 
-	lenght_modifier_t len_mods[] = {
-		{'l', 'd', print_long_integer},
-		{'l', 'i', print_long_integer},
-		{'h', 'd', print_short_integer},
-		{'h', 'i', print_short_integer},
-		{0, 0, NULL},
-	};
 
 	for (i = 0; formats[i].specifier; i++)
 	{
-		if (formats[i].specifier == *s)
+		if (_strcmp(formats[i].specifier, s) == 0)
 		{
 			return (formats[i].f);
 		}
 	}
-	for (j = 0; len_mods[j].modifier == *s || len_modd[j].specifier == *s[1]; j++)
-	{
-		if (len_mods[j].specifier == *s[0] && len_mods[j].specifier == *s[1])
-		{
-			return (len_mods[j].f);
-		}
-	}
+
 	return (NULL);
 }
 

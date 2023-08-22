@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
  */
 int print_specifier(const char *format, va_list args)
 {
+	char specifier[3];
 	int i, count = 0;
 	int (*func)(va_list);
 
@@ -49,13 +50,10 @@ int print_specifier(const char *format, va_list args)
 		{
 			if (format[i+1] == 'l' || format[i+1] == 'h')
 			{
-				func = get_print_function(&format[i+1]);
+				specifier[0] = format[i + 1];
+				specifier[1] = format[i + 2];
+				specifier[2] = '\0';
 				i +=2;
-			}
-			else
-			{
-				func = get_print_function(&format[i+1]);
-				i++;
 			}
 			if (format[i + 1] == '\0')
 			{
@@ -63,6 +61,13 @@ int print_specifier(const char *format, va_list args)
 				count++;
 				continue;
 			}
+			else
+			{
+				specifier[0] = formaat[i + 1];
+				specifier[1] = '\0';
+				i++;
+			}
+			func = get_print_function(specifier);
 			if (func)
 			{
 				count += func(args);
