@@ -19,6 +19,8 @@ int (*get_print_function(char s))(va_list)
 	{'b', print_binary},
 	{'p', print_pointer},
 	{'u', print_unsigned_integer},
+	{'x', print_hex_lower},
+	{'X', print_hex_upper},
 	{0, NULL},
 	};
 

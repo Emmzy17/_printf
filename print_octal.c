@@ -6,7 +6,7 @@
  * Return: total number of character printed
  */
 
-int print_octal(va_list list)
+int print_octal(va_list args)
 {
 	unsigned int num;
 	int len, lcopy, i;
