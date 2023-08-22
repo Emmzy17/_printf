@@ -16,21 +16,13 @@ int _printf(const char *format, ...);
 int (*get_print_function(char s))(va_list);
 int _putchar(char c);
 int print_specifier(const char *format, va_list args);
-<<<<<<< HEAD
 int print_integer(va_list args);
 int print_unsigned_integer(va_list args);
 int print_octal(va_list args);
 int print_hex_lower(va_list args);
 int print_hex_upper(va_list args);
 int number_len(int number, int base);
-=======
-int print_decimal(va_list);
-int print_integer(va_list);
-<<<<<<< HEAD
 int print_number(va_list args);
->>>>>>> parent of 5521590... new changes
-=======
->>>>>>> parent of 3e5ca58... new chagnes
 int print_binary(va_list args);
 int print_pointer(va_list args);
 int print_hex(unsigned long int n);
