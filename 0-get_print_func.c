@@ -18,7 +18,6 @@ int (*get_print_function(char *s))(va_list)
 	{"b", print_binary},
 	{"p", print_pointer},
 	{"u", print_unsigned_integer},
-	{"o", print_octal},
 	{"ld", print_long_decimal},
 	{"li" print_long_integer},
 	{"lu", print_long_unsigned},
