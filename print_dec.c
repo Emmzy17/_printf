@@ -1,12 +1,27 @@
 #include "main.h"
 
 /**
- * print_integer - prints a number in args
+ * print_integer - Prints an integer
+ * @args: list of argument
+ * Return: total number printed
+ */
+
+int print_integer(va_list args)
+{
+	int len;
+
+	len = print_number(args);
+	return (len);
+}
+
+
+/**
+ * print_number - prints a number in args
  * @args: list of argument
  * Return: total number of args printed
  */
 
-int print_integer(va_list args)
+int print_number(va_list args)
 {
 	int n;
 	int exp;
