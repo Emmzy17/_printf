@@ -6,7 +6,7 @@
  * Return: Number of symbols printed to stdout
  */
 
-int print_octal(va_list list)
+int print_octal(va_list args)
 {
 	unsigned int num;
 	int len;
