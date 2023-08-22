@@ -37,7 +37,34 @@ int print_string(va_list args)
 	}
 	return (count);
 }
+/**
+ * print_reverse - print the reverse of a string
+ * @args: arguement
+ * Return: length of the string
+ */
+int print_reverse(va_list args)
+{
+	const char *str;
+	int len;
+	int count = 0;
+	int i;
 
+	str = va_arg(args, const char *);
+	if (!str)
+	{
+		str ="(null)";
+	}
+	len = rev_string(str);
+
+	for (i = 0; i < len; i++)
+	{
+		_putchar(str[i]);
+		count++;
+	}
+	
+	return count;
+}
+	
 /**
  * print_percent - prints '%' specifier
  * @args: arguements
