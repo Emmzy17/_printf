@@ -47,13 +47,22 @@ int print_specifier(const char *format, va_list args)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i+1] == 'l' || format[i+1] == 'h')
+			{
+				func = get_print_function(&format[i+1]);
+				i +=2;
+			}
+			else
+			{
+				func = get_print_function(&format[i+1]);
+				i++;
+			}
 			if (format[i + 1] == '\0')
 			{
 				_putchar(format[i]);
 				count++;
 				continue;
 			}
-			func = get_print_function(format[i + 1]);
 			if (func)
 			{
 				count += func(args);

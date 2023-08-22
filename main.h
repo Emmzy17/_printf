@@ -35,4 +35,11 @@ typedef struct format
 	int (*f)(va_list);
 } format_t;
 
+typedef struct length_modifier 
+{
+	char length_modifier;
+	char specifier;
+	int (*func)(va_list);
+} length_modifier_t;
+
 #endif
