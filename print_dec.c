@@ -1,36 +1,54 @@
 #include "main.h"
 
 /**
- * print_integer - prints decimal values to the standard output
- * @args: a va_list type variable cotaining the integer
- * Return: number of bytes printed (success)
-*/
+ * print_integer - Prints an integer
+ * @args: list of argument
+ * Return: total number printed
+ */
+
 int print_integer(va_list args)
 {
-	int i = 0;
-	int exp = 1;
-	int num = va_arg(args, int);
-	int ncopy;
+	int len;
 
-	if (num < 0)
+	len = print_number(args);
+	return (len);
+}
+
+
+/**
+ * print_number - prints a number in args
+ * @args: list of argument
+ * Return: total number of args printed
+ */
+
+int print_number(va_list args)
+{
+	int n;
+	int exp;
+	int len;
+	unsigned int num;
+
+	n  = va_arg(args, int);
+	exp = 1;
+	len = 0;
+
+	if (n < 0)
 	{
-		_putchar('-');
-		num *= -1;
+		len += _putchar('-');
+		num = n * -1;
 	}
-	ncopy = num;
+	else
+		num = n;
 
-	while (ncopy / 10)
-	{
+	while (num / exp > 9)
 		exp *= 10;
-		ncopy /= 10;
-	}
 
-	while (exp)
+	while (exp != 0)
 	{
-		ncopy = num / exp;
-		i += _putchar('0' + ncopy);
-		num -= (ncopy * exp);
+		len += _putchar('0' + num / exp);
+		num %= exp;
 		exp /= 10;
 	}
-	return (i);
+
+	return (len);
 }
