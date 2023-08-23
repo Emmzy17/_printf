@@ -54,7 +54,7 @@ int print_reverse(va_list args)
 	{
 		str ="(null)";
 	}
-	len = rev_string(str);
+	len = rev_str(str);
 
 	for (i = 0; i < len; i++)
 	{
