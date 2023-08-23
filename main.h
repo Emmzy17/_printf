@@ -52,7 +52,7 @@ int print_long_hex_upper(va_list args);
 int print_short_hex_upper(va_list args);
 int print_reverse(va_list args);
 int print_rot13(va_list args);
-int rev_string(char *s);
+int rev_str(char *s);
 
 /**
  * struct format - the format handler structure
