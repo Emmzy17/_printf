@@ -6,7 +6,7 @@
  * Return: AN int
  */
 
-int rev_string(char *s)
+int rev_str(char *s)
 {
 	int a = 0, b, c;
 	char d;
