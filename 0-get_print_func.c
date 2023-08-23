@@ -17,7 +17,7 @@ int (*get_print_function(char *s))(va_list)
 	{"i", print_integer},
 	{"b", print_binary},
 	{"p", print_pointer},
-	{"r", print_reverse},
+	{"r", printf_srev},
 	{"u", print_unsigned_integer},
 	{"o", print_octal},
 	{"ld", print_long_decimal},
